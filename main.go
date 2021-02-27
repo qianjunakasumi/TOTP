@@ -5,7 +5,6 @@ import (
 	"crypto/sha1"
 	"encoding/base32"
 	"encoding/binary"
-	"errors"
 	"strconv"
 	"time"
 )
@@ -20,9 +19,6 @@ func Generate(k string, t time.Time) (code string, err error) {
 	if err != nil {
 		return
 	}
-	if len(bk) != 20 {
-		return "", errors.New("totp: 不支持的密钥长度")
-	}
 
 	c := uint64(t.Unix()) / 30
 	msg := make([]byte, 8)
@@ -32,7 +28,7 @@ func Generate(k string, t time.Time) (code string, err error) {
 	sha.Write(msg)
 	hash := sha.Sum(nil)
 
-	offset := hash[19] & 0xf
+	offset := hash[len(hash)-1] & 0xf
 	oi := hash[offset : offset+4]
 	oi[0] = oi[0] & 0x7f
 	i := binary.BigEndian.Uint32(oi) % 1000000
