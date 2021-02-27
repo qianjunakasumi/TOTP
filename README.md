@@ -1,9 +1,9 @@
 # TOTP 基于时间的一次性密码算法
 
-![LICENSE](https://img.shields.io/github/license/qianjunakasumi/TOTP?style=for-the-badge)
+[![LICENSE](https://img.shields.io/github/license/qianjunakasumi/TOTP?style=for-the-badge)](https://github.com/qianjunakasumi/TOTP/blob/main/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/qianjunakasumi/TOTP?style=for-the-badge)](https://goreportcard.com/report/github.com/qianjunakasumi/TOTP)
 
-![Doc](https://pkg.go.dev/badge/github.com/qianjunakasumi/totp?style=for-the-badge)
+[![Doc](https://pkg.go.dev/badge/github.com/qianjunakasumi/totp?style=for-the-badge)](https://pkg.go.dev/github.com/qianjunakasumi/totp)
 
 适用于TOTP(RFC 6238)中默认和推荐的计数、哈希方法和密钥、密码长度实现的身份验证器中验证用户的算法
 
