@@ -28,7 +28,7 @@ func Generate(k string, t time.Time) (code string, err error) {
 	sha.Write(msg)
 	hash := sha.Sum(nil)
 
-	offset := hash[len(hash)-1] & 0xf
+	offset := hash[19] & 0xf
 	oi := hash[offset : offset+4]
 	oi[0] = oi[0] & 0x7f
 	i := binary.BigEndian.Uint32(oi) % 1000000
